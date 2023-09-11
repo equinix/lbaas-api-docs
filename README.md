@@ -67,9 +67,9 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: bearer < acc
 |      Name       |  Type  | Required |                              Description                                 |
 |-----------------|--------|----------|--------------------------------------------------------------------------|
 | name            | String |    X     | Name of the loadbalancer                                                 |
-| location_id     | ID     |    X     | ID of the location to deploy the loadbalancer                            |
-| port_ids        | [ID]   |    -     | Array of port ID's to be added to the loadbalancer                       |
-| provider_id     | ID     |    X     | ID of the provider to deploy the loadbalancer                            |
+| location_id     | ID     |    X     | ID of the location to deploy the loadbalancer. Current options are : <br>&nbsp;&nbsp;&nbsp;&nbsp;- **DA**: `lctnloc--uxs0GLeAELHKV8GxO_AI`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **NY**: `lctnloc-Vy-1Qpw31mPi6RJQwVf9A`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **SV**: `lctnloc-H5rl2M2VL5dcFmdxhbEKx`|
+| port_ids        | [ID]   |    -     | Array of port ID's to be added to the loadbalancer                                                                                    |
+| provider_id     | ID     |    X     | ID of the provider to deploy the loadbalancer. Currently only `loadpvd-gOB_-byp5ebFo7A3LHv2B` is supported                            |
 
 #### Return
 
@@ -263,7 +263,7 @@ curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token
 | ports.number                          | Port Number                                                      |
 | ports.pool_ids                        | Array of IDs of pools that a port is assigned to                 |
 | ports.created_at                      | Timestamp for port creation                                      |
-| ports.updated_at                      | Teimstamp for port update                                        |
+| ports.updated_at                      | Timestamp for port update                                        |
 
 ### Get Specific Loadbalancer Port
 
@@ -414,12 +414,12 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: bearer <acce
 
 #### Fields
 
-|      Name       |       Type |   Required   |                              Description                  |
-|-----------------|------------|--------------|-----------------------------------------------------------|
-| name            | String     |      X       | Name of the loadbalancer origin                           |
-| target          | String     |      X       | IP Address of target                                      |
-| port_number     | Int        |      X       | Port number for loadbalancer origin target                |
-| active          | Boolean    |      -       | Boolean indicating whether origin is active               |
+|      Name       |       Type |   Required   |                              Description                                                         |
+|-----------------|------------|--------------|--------------------------------------------------------------------------------------------------|
+| name            | String     |      X       | Name of the loadbalancer origin                                                                  |
+| target          | String     |      X       | IP Address of target. Currenly only public IPV4 endpoints hosted on Equinix metal are supported. |
+| port_number     | Int        |      X       | Port number for loadbalancer origin target                                                       |
+| active          | Boolean    |      -       | Boolean indicating whether origin is active                                                      |
 
 #### Return
 

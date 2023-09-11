@@ -32,6 +32,15 @@ If you're already using the `metal` [CLI](https://github.com/equinix/metal-cli/t
 | < project id >                       | < project name >                |  < timestamp >                | 
 +--------------------------------------+---------------------------------+-------------------------------+
 ```
+
+Or if your metal cli is already configured, you can ensure the appropriate environment variables are set with: 
+
+```bash
+eval $(metal env --export)
+```
+
+This will put the default (from console) METAL_PROJECT_ID and METAL_AUTH_TOKEN in the environment.
+
 ### Retrieve Token
 
 To make requests, you will need an API token. If you already have one, you can skip ahead to the next step. If you need instructions on how to create one, you can refer to the documentation [here](https://deploy.equinix.com/developers/docs/metal/accounts/api-keys/#creating-project-api-keys).

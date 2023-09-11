@@ -275,7 +275,16 @@ curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token
 
 #### Return
 
-TODO: get the return for this
+{"created_at":"2023-09-07T19:34:15.961869Z","id":"loadprt-JOmS8o-xwtjq3rlwZcKkU","name":"8000","number":8000,"updated_at":"2023-09-07T19:34:15.961869Z"}
+
+| Name       |                  Description                           |
+|------------|--------------------------------------------------------|
+| id         | ID of specified loadbalancer port                      |
+| name       | Name of port                                           |
+| number     | Port number                                            |
+| created_at | Timestamp of port creation                             |
+| updated_at | Timestamp of last time port was updated                |
+
 
 ## Load Balancer Pools
 

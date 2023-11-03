@@ -1,9 +1,11 @@
 > [!WARNING]  
-> This software is currently in a beta release. For this reason, we don't recommend this for immediate usage while running production workloads. Any feedback is greatly appreciated!
+> This software is currently in a beta release. For this reason, we don't recommend this for immediate usage while running production workloads. [Any feedback is greatly appreciated!](https://feedback.equinixmetal.com/network/p/load-balancer-as-a-service-lbaas)
 
 # Equinix Load Balancers API Quickstart
 
 [![Stability: Beta](https://img.shields.io/badge/stability-beta-33bbff.svg)]()
+
+This document describes how to interact with an upcoming managed L3 / L4 Load Balancer-as-a-Service service, currently in beta. This service aims to be an ideal solution for directing traffic to your highly available backend Equinix Metal Servers and IPs.
 
 This document will describe how you can get started with Equinix Load Balancers via the API.
 

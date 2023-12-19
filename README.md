@@ -76,7 +76,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: bearer < acc
 |      Name       |  Type  | Required |                              Description                                 |
 |-----------------|--------|----------|--------------------------------------------------------------------------|
 | name            | String |    X     | Name of the loadbalancer                                                 |
-| location_id     | ID     |    X     | ID of the location to deploy the loadbalancer. Current options are : <br>&nbsp;&nbsp;&nbsp;&nbsp;- **DA**: `lctnloc--uxs0GLeAELHKV8GxO_AI`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **NY**: `lctnloc-Vy-1Qpw31mPi6RJQwVf9A`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **SV**: `lctnloc-H5rl2M2VL5dcFmdxhbEKx`|
+| location_id     | ID     |    X     | ID of the location to deploy the loadbalancer. Current options are : <br>&nbsp;&nbsp;&nbsp;&nbsp;- **DA**: `lctnloc--uxs0GLeAELHKV8GxO_AI`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **NY**: `lctnloc-Vy-1Qpw31mPi6RJQwVf9A`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **SV**: `lctnloc-H5rl2M2VL5dcFmdxhbEKx`<br>&nbsp;&nbsp;&nbsp;&nbsp;- **DC**: `lctnloc-1lJjVT6Zp_Fs4UpW5LWQu`|
 | port_ids        | [ID]   |    -     | Array of port ID's to be added to the loadbalancer                                                                                    |
 | provider_id     | ID     |    X     | ID of the provider to deploy the loadbalancer. Currently only `loadpvd-gOB_-byp5ebFo7A3LHv2B` is supported                            |
 

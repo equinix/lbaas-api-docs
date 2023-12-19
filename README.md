@@ -1,4 +1,4 @@
-> [!WARNING]  
+> [!WARNING]
 > This software is currently in a beta release. For this reason, we don't recommend this for immediate usage while running production workloads. Any feedback is greatly appreciated!
 
 # Equinix Load Balancers API Quickstart
@@ -29,11 +29,11 @@ If you're already using the `metal` [CLI](https://github.com/equinix/metal-cli/t
 +--------------------------------------+---------------------------------+-------------------------------+
 |                  ID                  |              NAME               |            CREATED            |
 +--------------------------------------+---------------------------------+-------------------------------+
-| < project id >                       | < project name >                |  < timestamp >                | 
+| < project id >                       | < project name >                |  < timestamp >                |
 +--------------------------------------+---------------------------------+-------------------------------+
 ```
 
-Or if your metal cli is already configured, you can ensure the appropriate environment variables are set with: 
+Or if your metal cli is already configured, you can ensure the appropriate environment variables are set with:
 
 ```bash
 eval $(metal env --export)
@@ -138,7 +138,7 @@ curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token
 
 |      Name                             |                          Description                             |
 |---------------------------------------|------------------------------------------------------------------|
-| data.loadBalancer.id                  | ID of the requested loadbalancer                                            
+| data.loadBalancer.id                  | ID of the requested loadbalancer
 | data.loadBalancer.ports               | Array describing ports associated with requested loadbalancer
 | data.loadBalancer.ports.id            | ID of the loadbalancer port
 | data.loadBalancer.ports.name          | Name of the loadbalancer port
@@ -166,12 +166,12 @@ Get all loadbalancers associated with a given project
 curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token>" https://lb.metalctrl.io/v1/projects/<project id>/loadbalancers
 ```
 
-#### Return 
+#### Return
 
 |      Name                             |                          Description                             |
 |---------------------------------------|------------------------------------------------------------------|
 | loadbalancers                         | Array of loadbalancers belonging to a project
-| loadbalancers.id                      | ID of the loadbalancer                                         
+| loadbalancers.id                      | ID of the loadbalancer
 | loadbalancers.name                    | Name of the loadbalancer
 | loadbalancers.IPAddresses             | Array of IPAddresses associated with loadbalancer
 | loadbalancers.IPAddresses.ip          | IP address associated with loadbalancer
@@ -221,7 +221,7 @@ curl -X POST -H 'Content-Type: application/json' -H "Authorization: bearer < acc
 Update loadbalancer port
 
 ```bash
-curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: bearer <access_token >" https://lb.metalctrl.io/v1/loadbalancers/ports/< loadbalancer id >
+curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: bearer <access_token >" https://lb.metalctrl.io/v1/loadbalancers/ports/< loadbalancer port id >
 ```
 
 #### Fields
@@ -229,8 +229,10 @@ curl -X PATCH -H 'Content-Type: application/json' -H "Authorization: bearer <acc
 |      Name       |       Type |                             Description                   |
 |-----------------|------------|-----------------------------------------------------------|
 | name            | String     | Name of the loadbalancer port                             |
-| number          | Int.       | Number of the loadbalancer port.                          |
-| pool_ids.       | [ID]       | Array of pool ID's to attach the loadbalancer port to     |
+| number          | Int.       | Number of the loadbalancer port                           |
+| clear_pools     | Boolean    | Remove all of the pool IDs attached to the port           |
+| add_pool_ids    | [ID]       | Array of pool ID's to attach to the loadbalancer port     |
+| remove_pool_ids | [ID]       | Array of pool ID's to remove from the loadbalancer port   |
 
 #### Return
 
@@ -262,7 +264,7 @@ Get loadbalancer port
 curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token >" https://lb.metalctrl.io/v1/loadbalancers/< loadbalancer id>/ports/
 ```
 
-#### Return 
+#### Return
 
 |      Name                             |                          Description                             |
 |---------------------------------------|------------------------------------------------------------------|
@@ -293,7 +295,6 @@ curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token
 | number     | Port number                                            |
 | created_at | Timestamp of port creation                             |
 | updated_at | Timestamp of last time port was updated                |
-
 
 ## Load Balancer Pools
 
@@ -503,5 +504,5 @@ curl -H 'Content-Type: application/json' -H "Authorization: bearer <access_token
 | origins.target      | IP Address of associated origin target                   |
 | origins.port_number | Port number of associated origin target                  |
 | origins.active      | Boolean indicated whether target is active               |
-| origins.created_at  | Timestamp of origin creation                             | 
+| origins.created_at  | Timestamp of origin creation                             |
 | origins.updated_at  | Timestamp of origin update                               |
